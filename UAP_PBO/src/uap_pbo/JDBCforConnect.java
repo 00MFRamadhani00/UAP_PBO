@@ -8,7 +8,7 @@ package uap_pbo;
  *
  * @author Asus
  */
-public class JDBCforConnet {
+public class JDBCforConnect {
 
     /**
      * @param args the command line arguments
