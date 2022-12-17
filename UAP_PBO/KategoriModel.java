@@ -51,6 +51,38 @@ public class KategoriModel {
         } catch (SQLException ex) {
             Logger.getLogger(KategoriModel.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public ArrayList<Kategori> getKategori(){
+        String query = "SELECT * FROM kategori";
+        ArrayList<Kategori> ktg = new ArrayList<>();
         
+        System.out.println(query);
+        try {
+            ResultSet rs = CONN.createStatement().executeQuery(query);
+            while(rs.next()){
+                Kategori temp = new Kategori(rs.getInt("id_kategori"), rs.getString("nama_kategori"));
+                ktg.add(temp);
+            }
+            System.out.println("Berhasil Mengambil Data");
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdukModel.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Gagal Mengambil Data");
+        }
+        return ktg;
+    }
+    
+    public void upKategori(Kategori ktg){
+        String update = "UPDATE kategori SET nama_produk='" +ktg.getNama_kategori()+ " WHERE id_produk= " +ktg.getId_kategori();
+
+        System.out.println(update);
+        try {
+            PreparedStatement upd = CONN.prepareStatement(update);
+            upd.executeUpdate();
+            System.out.println("Berhasil Update Data");
+        } catch (SQLException ex) {
+            Logger.getLogger(KategoriModel.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Gagal Update Data");
+        }
     }
 }
