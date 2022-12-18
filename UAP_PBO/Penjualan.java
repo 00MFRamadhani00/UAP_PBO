@@ -16,10 +16,11 @@ public class Penjualan implements ProductCounter{
     private int jumlahProduk;
     private int stok;
 
-    public Penjualan(int id_penjualan, int jumlahProduk, int stok) {
+    public Penjualan(int id_penjualan, ArrayList<Produk> listProduk, int jumlahProduk, int stok) {
         this.id_penjualan = id_penjualan;
         this.jumlahProduk = jumlahProduk;
         this.stok = stok;
+        this.listProduk = new ArrayList<>();
     }    
 
     public int getId_penjualan() {
@@ -54,6 +55,10 @@ public class Penjualan implements ProductCounter{
         this.stok = stok;
     }
     
+    public ArrayList<Produk> getProduk(Produk p){
+        listProduk.add(p);
+        return listProduk;
+    }
     @Override
     public void hitungJumlahProduk(){
         System.out.println("Pokoknya Ada");
