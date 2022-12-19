@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="uap_pbo.KategoriController">
+   <children>
+      <TextField fx:id="inKtg" layoutX="52.0" layoutY="121.0" promptText="Nama Kategori" />
+      <Button fx:id="tbhKtg" layoutX="97.0" layoutY="243.0" mnemonicParsing="false" onAction="#toTbhKtg" text="Tambah" />
+      <Label fx:id="cek" layoutX="201.0" layoutY="46.0" text="CEK KATEGORI DALAM LIST BARANG" />
+      <TextField fx:id="delKtg" layoutX="382.0" layoutY="121.0" promptText="Nama Kategori" />
+      <Button fx:id="hpsKtg" layoutX="432.0" layoutY="243.0" mnemonicParsing="false" onAction="#toHpsKtg" text="Hapus" />
+      <TableView fx:id="listKtg" layoutX="200.0" layoutY="186.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="lstKtg" prefWidth="199.20001220703125" text="KATEGORI" />
+        </columns>
+      </TableView>
+      <Button fx:id="backHome" layoutX="26.0" layoutY="34.0" mnemonicParsing="false" onAction="#toBackHome" text="🏠" />
+   </children>
+</AnchorPane>
